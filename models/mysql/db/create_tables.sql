@@ -25,9 +25,7 @@ CREATE TABLE pro_matches (
     radiant_score INT,
     dire_score INT,
     radiant_win BOOLEAN,
-    radiant BOOLEAN,
-    FOREIGN KEY (dire_team_id) REFERENCES teams(team_id),
-    FOREIGN KEY (radiant_team_id) REFERENCES teams(team_id)
+    version INT
 );
 
 CREATE TABLE teams_matches(
@@ -44,19 +42,15 @@ CREATE TABLE teams_matches(
     cluster INT,
     opposing_team_id INT,
     opposing_team_name VARCHAR(255),
-    opposing_team_logo VARCHAR(255),
-    FOREIGN KEY (opposing_team_id) REFERENCES teams(team_id),
-    FOREIGN KEY (match_id) REFERENCES  pro_matches(match_id),
-    FOREIGN KEY (team_id) REFERENCES teams(team_id)
+    opposing_team_logo VARCHAR(255)
 );
 
 CREATE TABLE teams_heroes (
     hero_id INT PRIMARY KEY,
     team_id INT,
-    name VARCHAR(255),
+    localized_name VARCHAR(255),
     games_played INT,
-    wins INT,
-    FOREIGN KEY (team_id) REFERENCES teams(team_id)
+    wins INT
 );
 
 CREATE TABLE pro_players (
@@ -72,6 +66,8 @@ CREATE TABLE pro_players (
     cheese INT,
     fh_unavailable BOOLEAN,
     loccountrycode VARCHAR(255),
+    last_match_time VARCHAR(255),
+    plus BOOLEAN,
     name VARCHAR(255),
     country_code VARCHAR(255),
     fantasy_role INT,
@@ -80,8 +76,7 @@ CREATE TABLE pro_players (
     team_tag VARCHAR(255),
     is_locked BOOLEAN,
     is_pro BOOLEAN,
-    locked_until INT,
-    FOREIGN KEY (team_id) REFERENCES teams(team_id)
+    locked_until INT
 );
 
 CREATE TABLE teams_players (
@@ -90,7 +85,5 @@ CREATE TABLE teams_players (
     name VARCHAR(255),
     games_played INT,
     wins INT,
-    is_current_team_member BOOLEAN,
-    FOREIGN KEY (team_id) REFERENCES teams(team_id),
-    FOREIGN KEY (account_id) REFERENCES pro_players(account_id)
+    is_current_team_member BOOLEAN
 );
