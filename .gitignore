@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=data,python
 
 ### User files ###
-docker/mysql/
+docker/mysql/mysql/
 src/config.py
 .idea
 

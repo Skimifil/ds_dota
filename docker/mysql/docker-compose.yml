@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: dota_tournaments
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./mysql/db/dados:/var/lib/mysql
+    ports:
+      - "3206:3306"
+    command: ["mysqld", "--bind-address=0.0.0.0"]
+    networks:
+      mysq_network:
+        ipv4_address: 172.19.0.2
+
+networks:
+  mysq_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
+
+# Lets UP de container with the command: docker-compose up -d

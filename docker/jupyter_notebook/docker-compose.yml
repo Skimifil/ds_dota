@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  pyspark:
+    image: jupyter/all-spark-notebook
+    container_name: jupyter-all-spark
+    restart: always
+    volumes:
+      - ../../notebooks/confs:/home/jovyan
+    ports:
+      - "8888:8888"
+    networks:
+      jupyter_network:
+        ipv4_address: 172.20.0.2
+
+networks:
+  jupyter_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+
+# Lets UP de container with the command: docker-compose up -d
