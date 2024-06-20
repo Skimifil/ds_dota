@@ -325,4 +325,3 @@ def load_data_in_database():
 
     except Exception as e:
         return f'Failed to get data from API. Error: {e}'
-
