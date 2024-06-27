@@ -40,24 +40,69 @@ Open Dota API - https://docs.opendota.com/#section/Introduction
 ### Objetivos Gerais
 
 1. **Entender o problema de negócio e identificar os elementos a serem considerados para o planejamento de um Modelo de Data Science:**
-   - O problema de negócio pode ser relacionado a entender quais fatores contribuem para o sucesso de uma equipe em torneios de Dota 2. Elementos a considerar incluem desempenho das equipes, estatísticas dos jogadores, resultados de partidas e características das ligas.
+   - A ideia é entender quais fatores contribuem para o sucesso de uma equipe em torneios de Dota 2. Elementos a considerar incluem desempenho das equipes, estatísticas dos jogadores, resultados de partidas e características das ligas.
 
 2. **Descrever os dados do problema e as relações entre dados através da Análise Exploratória de Dados:**
    - Isso envolve a coleta de dados das ligas, partidas, equipes e jogadores, seguida pela análise para identificar padrões, correlações e insights importantes. A análise exploratória de dados (EDA) ajudará a entender melhor a distribuição dos dados e as possíveis relações entre variáveis.
+     - leagues:
+       - Com as ligas, podemos entender o comportamento dos times e jogadores dependendo do tier da liga (amadora, profissional, etc).
+     - proMatches:
+       - Temos a visão das partidas oficiais de jogos profissionais, dados de duração da partida, dia e horário de começou, times jogando e qual ganhou.
+     - proPlayers:
+       - Temos as informações dos jogadores para fazer relação com as informações de partidas e ligas que ele(a) jogou.
+     - teams:
+       - Dados básicas, mas importantes, como vitórias e derrotas do time e o "rating" do time pode nos passar uma ideia de comparação com outros times.
+     - teamsMatches:
+       - Pegamos dados mais detalhados de partidades que houveram daquele time, duração, data e hora, quem era seu oponente e a liga.
+     - teamPlayers:
+       - Fazemos referência aos jogadores que estão e passarampor aquele time, entendendo quantos jogos tiveram e quantas vitórias.
+     - teamHeroes:
+       - Pegando dados de vitórias e quantidade de jogos com determinado herói dentro do jogo, podemos entender o desempenho do time com cada herói.
 
 3. **Construir uma apresentação executiva mostrando os resultados obtidos:**
    - A apresentação deve incluir visualizações claras e concisas dos resultados da análise, insights importantes descobertos, e recomendações baseadas nos dados. Deve ser direcionada a um público executivo, destacando os pontos mais relevantes.
+   #TODO - Ja é pra construir uma apresentação? Mas que resultados?
 
 ### Objetivos Específicos
 
 1. **Desenvolver as instâncias de Data Acquisition e Data Wrangling em seu trabalho final:**
    - Isso inclui a configuração e utilização da OpenDota API para coletar dados e o processo de limpeza e transformação dos dados para que possam ser utilizados em análises posteriores.
+   - Através das funções criadas, foi desenvolvido um código que conecta na API da OpenDora API e armazena em um banco de dados MySQL.
 
 2. **Conseguir uma articulação em equipe e uma divisão de tarefas adequadas aos objetivos:**
    - Definir claramente os papéis e responsabilidades de cada membro da equipe para garantir que todas as partes do projeto sejam cobertas eficientemente.
+   - Este projeto esta sendo feito de forma individual, apenas pelo Rafael P de Carvalho.
+   * Tarefas:
+     * Planejamento e Organização do Projeto
+       * Definição do Problema e Objetivos do Projeto 
+       * Configuração do Ambiente de Trabalho.
+     * Coleta e Aquisição de Dados (Data Acquisition)
+       * Conexão à OpenDota API
+       * Download de Dados
+     * Preparação e Limpeza dos Dados (Data Wrangling)
+       * Criação do Banco de Dados
+       * Inserção de Dados no Banco de Dados
+       * Limpeza de Dados
+     * Análise Exploratória de Dados (EDA)
+       * Análise Univariada
+       * Análise Bivariada
+       * Análise Multivariada
+     * Modelagem e Análise de Dados
+       * Filtragem e Seleção de Dados
+       * Modelagem Preditiva
+     * Visualização e Apresentação dos Resultados
+       * Criação de Visualizações
+       * Preparação da Apresentação Executiva
+     * Documentação e Relatório Final
+       * Documentação do Projeto
+       * Elaboração do Relatório Final
+     * Revisão e Entrega
+       * Revisão do Trabalho
+       * Entrega do Projeto
 
 3. **Realizar Filtragem:**
    - Aplicar técnicas de filtragem para isolar os dados mais relevantes para o estudo, como partidas de torneios específicos, jogadores profissionais, etc.
+   #TODO - Eu pego tudo que vem da API, basicamente eu tiro o "lixo" ou é mais na hora da analise que faz essa filtragem?
 
 4. **Descrever o que significa cada variável, como se comporta:**
    - Explicar o significado de cada variável coletada (ex: `match_id`, `start_time`, `radiant_team_id`, `dire_team_id`, etc.) e analisar seu comportamento através de estatísticas descritivas e visualizações.
