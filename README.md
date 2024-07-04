@@ -129,7 +129,7 @@ Open Dota API - https://docs.opendota.com/#section/Introduction
 5. **Geração do primeiro Data Wrangling e EDA, apontado seus dados (insights) univariados, bivariados e multivariados:**
    - Exemplo de insights univariados: Distribuição de durações de partidas.
    - Insights bivariados: Correlação entre a quantidade de vitórias e a pontuação média da equipe.
-   - Insights multivariados: Análise da relação entre desempenho da equipe, estatísticas dos jogadores e resultados das partidas.
+   - Insights multivariados: #TODO
 
 6. **Análise de Componentes Principais:**
    - Utilizar PCA para reduzir a dimensionalidade dos dados e identificar as variáveis mais influentes no desempenho das equipes.
